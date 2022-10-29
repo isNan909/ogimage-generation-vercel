@@ -1,4 +1,7 @@
 import { ImageResponse } from '@vercel/og';
+import { NextApiRequest, NextApiResponse } from "next";
+
+import data from "../../data/_og.json";
 
 export const config = {
 	runtime: 'experimental-edge',
@@ -7,9 +10,16 @@ export const config = {
 const fontNormal = fetch(new URL("../../assets/Inter-Medium.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 const fontBold = fetch(new URL("../../assets/Inter-Black.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 
-export default async function () {
+export default async function (req: NextApiRequest) {
 	const fontData = await fontNormal;
 	const fontBoldData = await fontBold;
+	const { searchParams } = req.nextUrl;
+
+	const titlePost = searchParams.get('title');
+	const subtitlePost = searchParams.get('subtitle');
+	// http://localhost:3000/api/og?title=titleishere
+	// http://localhost:3000/api/og?title=dynamic%20OG&subtitle=Opengraph%20image%20generator
+
 	return new ImageResponse(
 		(
 			<div
@@ -59,8 +69,8 @@ export default async function () {
 						</svg>
 
 					</div>
-					<h1 tw="flex flex-col text-3xl font-black tracking-wide text-left bg-yellow-400 text-9xl py-4 px-6 uppercase rounded-3xl">dynamic <span>opengraph</span></h1>
-					<span tw="flex flex-col text-6xl font-medium tracking-tight text-left text-white">OG Image generation</span>
+					<h1 tw="flex flex-col text-3xl font-black tracking-wide text-left bg-yellow-400 text-9xl py-4 px-6 uppercase rounded-3xl">{titlePost}</h1>
+					<span tw="flex flex-col text-6xl font-medium tracking-tight text-left text-white">{subtitlePost}</span>
 				</div>
 				<div
 					style={{
