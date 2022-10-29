@@ -1,7 +1,5 @@
 import { ImageResponse } from '@vercel/og';
-import { NextApiRequest } from "next/server";
-
-import data from "../../data/_og.json";
+import { NextRequest } from "next/server";
 
 export const config = {
 	runtime: 'experimental-edge',
@@ -10,7 +8,7 @@ export const config = {
 const fontNormal = fetch(new URL("../../assets/Inter-Medium.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 const fontBold = fetch(new URL("../../assets/Inter-Black.ttf", import.meta.url)).then((res) => res.arrayBuffer());
 
-export default async function (req: NextApiRequest) {
+export default async function (req: NextRequest) {
 	try{
 		const fontData = await fontNormal;
 		const fontBoldData = await fontBold;
