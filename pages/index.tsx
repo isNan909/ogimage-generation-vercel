@@ -15,7 +15,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://example.com/images/cool-page.jpg"
+          content="https://og-examples.vercel.sh/api/static"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
