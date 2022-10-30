@@ -17,7 +17,7 @@ export default async function (req: NextRequest) {
 		const titlePost = searchParams.get('title');
 		const subtitlePost = searchParams.get('subtitle');
 		// http://localhost:3000/api/og?title=titleishere
-		// http://localhost:3000/api/og?title=dynamic%20OG&subtitle=Opengraph%20image%20generator
+		// http://localhost:3000/api/og?title=opengraph&subtitle=Dynamic%20image%20using%20edge%20function
 	
 		return new ImageResponse(
 			(
