@@ -15,7 +15,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="https://og-examples.vercel.sh/api/static"
+          content="https://ogimage-generation-vercel.vercel.app/api/og?title=opengraph&subtitle=Dynamic%20image%20using%20edge%20function"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
