@@ -22,7 +22,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          <a href="https://nextjs.org">Next.js!</a> Open Graph Image Generation
         </h1>
 
         <p className={styles.description}>
@@ -30,9 +30,9 @@ export default function Home() {
           <code className={styles.code}>from Vercel @vercel/og</code>
         </p>
 
-        <p className={styles.description}>Tutorial video implementation can be found here: <a href="#" className={styles.videoLink}><u>Click video link here</u></a></p>
+        <p className={styles.description}>Tutorial video implementation can be found here: <a href="https://www.youtube.com/watch?v=xpR9pMzAGqQ" className={styles.videoLink}><u>Click video link here</u></a></p>
 
-        {/* embed video iframe here */}
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xpR9pMzAGqQ" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
       </main>
 
       <footer className={styles.footer}>
